@@ -20,10 +20,7 @@ const Login = () => {
 
     const handleClickLogin = (event) => {
         event.preventDefault();
-        console.log(`USERNAME : "${username}"`);
-        console.log(`PASSWORD : "${password}"`);
         submitLogin(username,password).then(data => {
-            console.log("RESULT : ", data);
             if (data.status === 'success') {
                 localStorage.setItem("tokenTestDansMultipro",data.token);
                 Router.push('/positions');

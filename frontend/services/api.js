@@ -7,7 +7,7 @@ export const fetchPositions = async() => {
 }
 
 export const fetchPositionsWithFilters = async(description,location,fullTime) => {
-    let response = await fetch(`${API_URL}/api/datas?description=${description}&location=${location}&fullTime=${fullTime}`);
+    let response = await fetch(`${API_URL}/api/datas?description=${description}&location=${location}&full_time=${fullTime}`);
     let data = await response.json();
     return data
 }

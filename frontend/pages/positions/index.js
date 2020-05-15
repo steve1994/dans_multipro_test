@@ -7,7 +7,7 @@ import {differenceTwoDates} from '../../helper/utils';
 import '~/public/css/positions.css';
 
 const Datas = () => {
-    const [dataPositions, setDataPositions] = useState([])
+    const [dataPositions, setDataPositions] = useState(null)
     const [filterDescription, setFilterDescription] = useState('');
     const [filterLocation, setFilterLocation] = useState('');
     const [filterFullTime, setFilterFullTime] = useState(false);
@@ -29,7 +29,7 @@ const Datas = () => {
         .then(data => setDataPositions(data.results));
     }
 
-    return (
+    return dataPositions && (
         <div>
             <Header />
             <div className="container">

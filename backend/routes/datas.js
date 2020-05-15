@@ -7,12 +7,12 @@ const API_URL_SOURCE = "https://jobs.github.com/positions"
 router.get('/', function(req, res) {
     let description = req.query.description
     let location = req.query.location
-    let fullTime = req.query.full_time
+    let fullTime = req.query.full_time ? JSON.parse(req.query.full_time) : false;
 
     fetch(`${API_URL_SOURCE}.json`)
     .then(response => response.json())
     .then(data => {
-        let resultData = data.filter(item => {
+        let resultData = data.filter((item,index) => {
             let booleanDescription
             if (description) {
                 booleanDescription = item.description.toString().toLowerCase().includes(description.toLowerCase());

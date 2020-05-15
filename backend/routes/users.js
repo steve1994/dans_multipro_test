@@ -28,21 +28,22 @@ module.exports = (pool) => {
                         status : 'failed',
                         message : 'username and password cannot be null'
                     })
+                } else {
+                    let sqlInsert = "INSERT INTO users(username,password) VALUES ($1, $2)"
+                    pool.query(sqlInsert, [username, password], function (err,response) {
+                        if (err) {
+                            res.status(400).json({
+                                status : 'failed',
+                                message : err
+                            })
+                        } else {
+                            res.status(201).json({
+                                status : 'success',
+                                message : {username}
+                            })
+                        }
+                    })
                 }
-                let sqlInsert = "INSERT INTO users(username,password) VALUES ($1, $2)"
-                pool.query(sqlInsert, [username, password], function (err,response) {
-                    if (err) {
-                        res.status(400).json({
-                            status : 'failed',
-                            message : err
-                        })
-                    } else {
-                        res.status(201).json({
-                            status : 'success',
-                            message : {username}
-                        })
-                    }
-                })
             }
         })
     })
