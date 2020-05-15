@@ -14,9 +14,7 @@ const Register = () => {
         verifyToken(token).then(data => {
             if (data.status === 'success') {
                 Router.push('/positions');
-            } else {
-                alert("Username already registered");
-            }
+            } 
         })
     }, [])
 
