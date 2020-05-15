@@ -1,0 +1,12 @@
+.element-data {
+    border-color : #e2e2e2;
+    border-style : groove;
+    border-left-style : none;
+    border-right-style : none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.container-job-list {
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.5);
+}

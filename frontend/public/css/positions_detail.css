@@ -1,0 +1,31 @@
+.position-detail-title {
+    border-color : #e2e2e2;
+    border-style : groove;
+    border-left-style : none;
+    border-right-style : none;
+    border-top-style : none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.right-bar-element {
+    border-color : #e2e2e2;
+    border-style : groove;
+    border-width: thick;
+}
+
+.right-bar-element .header-right-bar-element {
+    border-color : #e2e2e2;
+    border-style : groove;
+    border-left-style : none;
+    border-right-style : none;
+    border-top-style : none;
+}
+
+.right-bar-element .content-right-bar-element {
+    overflow-x : scroll;
+}
+
+.container-detail-content {
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.5);
+}
